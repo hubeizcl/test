@@ -61,17 +61,18 @@ public class StreamTest {
     list6.forEach(action -> System.out.println(action));
     System.out.println("6666666666666666666666666666666");
 
+
     Integer reduce = Stream.of(1, 2, 3, 4).reduce(10, (count, item) -> {
       System.out.println("count:" + count);
       System.out.println("item:" + item);
       return count + item;
     });
-    System.out.println(reduce);
+
     Integer reduce2 = Stream.of(1, 2, 3, 4).reduce(0, (x, y) -> x + y);
-    System.out.println(reduce2);
+
     String[] strs = {"1", "2", "3", "4"};
     String reduce3 = Stream.of(strs).reduce("", (x, y) -> x + ":" + y);
-    System.out.println(reduce3);
+
 
     Set<String> set =
         StreamTest.getData().stream().map(PersonModel::getName).collect(Collectors.toSet());
